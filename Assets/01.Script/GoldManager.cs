@@ -18,6 +18,11 @@ public class GoldManager : MonoBehaviour
     }
     public void AddGold(int amount)
     {
-        Gold += amount;
+        if(Gold<2000000000)
+            Gold += amount;
+        else
+        {
+
+        }
     }
 }
