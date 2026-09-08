@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2254862058678955402}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
   _speed: 1
   _rb: {fileID: 2254862058678955402}
+  _lifeTime: 5
+  _damage: 1
 --- !u!50 &2254862058678955402
 Rigidbody2D:
   serializedVersion: 5

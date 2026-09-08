@@ -8,6 +8,7 @@ public class Arrow : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField]private float _lifeTime = 5f;
     private float _waitTime;
+    public int _damage;
     private void Awake()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -20,6 +21,9 @@ public class Arrow : MonoBehaviour
 
         transform.eulerAngles = new Vector3(0, 0, degree);
         _rb.linearVelocity = movedir.normalized * _speed;
+
+        _damage = UpgradeManager.Instance.UpgradeDict[typeof(ArrowDamageUpgrade)].CurrentValue;
+        _speed = UpgradeManager.Instance.UpgradeDict[typeof(ArrowSpeedUpgrade)].CurrentValue;
     }
     private void Update()
     {
@@ -31,7 +35,10 @@ public class Arrow : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        if(collision.gameObject.TryGetComponent(out Slime enemy))
+        {
+            enemy.OnDamage(_damage);
+            Destroy(gameObject);
+        }
     }
 }

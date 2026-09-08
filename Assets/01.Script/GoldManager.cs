@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class GoldManager : MonoBehaviour
 {
     public static GoldManager Instance;
     public int Gold { get; private set; }
+    public event Action<int> OnUpdateGold;
     private void Awake()
     {
         if (Instance == null)
@@ -18,11 +20,7 @@ public class GoldManager : MonoBehaviour
     }
     public void AddGold(int amount)
     {
-        if(Gold<2000000000)
-            Gold += amount;
-        else
-        {
-
-        }
+        Gold += amount;
+        OnUpdateGold?.Invoke(Gold);
     }
 }
