@@ -4,7 +4,7 @@ using UnityEngine;
 public class GoldManager : MonoBehaviour
 {
     public static GoldManager Instance;
-    public int Gold { get; private set; }
+    [field:SerializeField]public int Gold { get; private set; }
     public event Action<int> OnUpdateGold;
     private void Awake()
     {

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685b713153834c13a0080bc91f62ddda, type: 3}
+  m_Name: AudioCatalog
+  m_EditorClassIdentifier: AudioSystem::AudioCatalog
+  BGMList:
+  - Type: 0
+    Category: 0
+    Clip: {fileID: 8300000, guid: 595bfadf69d46ba4fb14310196fb3cdd, type: 3}
+    Volume: 1
+    Loop: 1
+  SFXList:
+  - Type: 1
+    Category: 1
+    Clip: {fileID: 8300000, guid: c5a53c0e797091d4bb64d0ed220a2637, type: 3}
+    Volume: 1
+    Loop: 0

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc1ab6cba104778b6d11ed04381cf18, type: 3}
+  m_Name: EffectCatalog
+  m_EditorClassIdentifier: EffectSystem::EffectCatalog
+  Effects:
+  - Type: 2
+    Prefab: {fileID: 5658097526471353449, guid: 42e3d97b39fef174b9ba5193ccfd3504, type: 3}
+    PoolSize: 50
+    Duration: 0.5
+  - Type: 0
+    Prefab: {fileID: 5195530882262130755, guid: c656f84a30407b24a994f961f5d0f90e, type: 3}
+    PoolSize: 50
+    Duration: 0.5
+  - Type: 1
+    Prefab: {fileID: 8208283736489929179, guid: 917a6bccec264cd4ab8ea09e3ac116f1, type: 3}
+    PoolSize: 50
+    Duration: 2

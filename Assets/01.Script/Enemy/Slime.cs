@@ -19,7 +19,14 @@ public class Slime : MonoBehaviour
     public void OnDamage(int dmg)
     {
         hp -= dmg;
-        if (hp <= 0) Destroy(gameObject);
+        EffectManager.Instance.Play(EffectType.DamageText, transform.position, Damage);
+        EffectManager.Instance.Play(EffectType.EnemyHit, transform.position);
+        AudioManager.Instance.PlaySFX(AudioType.EnemyHit);
+        if (hp <= 0)
+        {
+            EffectManager.Instance.Play(EffectType.EnemyDie, transform.position);
+            Destroy(gameObject);
+        }
     }
     private void OnDestroy()
     {

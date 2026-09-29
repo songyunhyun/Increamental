@@ -13,10 +13,12 @@ public abstract class AbstractUpgrade : MonoBehaviour
             GoldManager.Instance.AddGold(-_upgradeCost);
             _upgradeCost += Mathf.Max(1, _upgradeCost / 5);
         }
+        else
+            print("caoont upgrade");
     }
 
     private bool CanUpgrade()
     {
-        return _upgradeCost >= GoldManager.Instance.Gold;
+        return _upgradeCost <= GoldManager.Instance.Gold;
     }
 }
