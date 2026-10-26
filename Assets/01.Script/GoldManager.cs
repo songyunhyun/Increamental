@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class GoldManager : MonoBehaviour
 {
@@ -17,6 +18,16 @@ public class GoldManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void ResetGold()
+    {
+        Gold = 0;
+        OnUpdateGold?.Invoke(Gold);
+    }
+    public void SetGold(int value)
+    {
+        Gold = value;
+        OnUpdateGold?.Invoke(Gold);
     }
     public void AddGold(int amount)
     {

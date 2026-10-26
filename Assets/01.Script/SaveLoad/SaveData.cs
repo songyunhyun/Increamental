@@ -1,0 +1,7 @@
+using UnityEngine;
+
+public struct SaveData
+{
+    public int hp;
+    public int gold;
+}

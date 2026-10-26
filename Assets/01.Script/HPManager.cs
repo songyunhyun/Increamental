@@ -5,7 +5,7 @@ public class HPManager : MonoBehaviour
 {
     public static HPManager Instance;
     private const int originHP = 10;
-    [field:SerializeField]public int HP { get; private set; }
+    [field:SerializeField]public int HP { get; set; }
     public event Action<int> OnUpdateHealth;
     public event Action OnDeath;
     private void Awake()
@@ -19,6 +19,7 @@ public class HPManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        ResetHP();
     }
     public void ResetHP()
     {
@@ -32,6 +33,12 @@ public class HPManager : MonoBehaviour
         OnUpdateHealth?.Invoke(HP);
         if (HP <= 0)
             Death();
+    }
+
+    public void SetHP(int value)
+    {
+        HP = value;
+        OnUpdateHealth?.Invoke(HP);
     }
 
     private void Death()
