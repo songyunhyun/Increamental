@@ -9,7 +9,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        SaveData data=new();
+        SaveData data = new();
         data.gold = GoldManager.Instance.Gold;
         data.hp = HPManager.Instance.HP;
 
